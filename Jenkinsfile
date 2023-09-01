@@ -9,7 +9,6 @@ pipeline {
                 sh 'ssh root@192.168.1.223 rm -rf /var/tmp/jenk_build'
                 sh 'ssh root@192.168.1.223 mkdir /var/tmp/jenk_build'
                 sh 'scp -r * root@192.168.1.223:/var/tmp/jenk_build'
-                sh 'ssh root@192.168.1.223 cd /var/tmp/jenk_build ; ./build.sh'
             }
         }
         stage('Build') {
