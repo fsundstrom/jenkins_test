@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'test.sh||true'
+                sh '.\test.sh||true'
                 
             }
         }
