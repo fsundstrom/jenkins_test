@@ -33,9 +33,8 @@ pipeline {
         }
     }
 
-    post { 
+    post('test') { 
           always { 
-            stage('cleanup')
             cleanWs()
          }
    }
