@@ -1,6 +1,10 @@
 pipeline {
    agent any
 
+    environment { 
+        def MYTESTSTR = 'testing 123'
+    }
+
     stages {
         stage('Copy') {
             steps {
@@ -17,7 +21,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "Building ${env.YOUR_JENKINS_HOST} "
+                echo "Building ${env.MYTESTSTR} "
                 sh 'ls -al'
             }
         }
