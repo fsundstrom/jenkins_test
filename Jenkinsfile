@@ -5,7 +5,7 @@ pipeline {
         stage('Copy') {
             steps {
                 echo 'copying..'
-                sshagent (credentials: ['test123']) {
+                sshagent (credentials: ['test200']) {
                    sh 'ssh -o StrictHostKeyChecking=no -l user 192.168.1.95 ls -al'
                  }
                 sh 'ssh root@192.168.1.223 rm -rf /var/tmp/jenk_build'
