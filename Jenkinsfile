@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo 'Building '$MYTOOL_VERSION
+                echo 'Building $MYTOOL_VERSION '
                 sh 'ls -al'
             }
         }
