@@ -1,6 +1,7 @@
 pipeline {
    agent any
 
+    // enverment var test
     environment { 
         def MYTESTSTR = 'testing 123'
     }
@@ -21,6 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                // enverment var test
                 echo "Building ${env.MYTESTSTR} "
                 sh 'ls -al'
             }
