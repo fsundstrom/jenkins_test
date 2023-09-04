@@ -1,7 +1,7 @@
 pipeline {
    agent any
    environment { 
-        TESTING321 = 'testing 123'
+        def TESTING321 = 'testing 123'
     }
 
     stages {
