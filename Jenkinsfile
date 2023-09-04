@@ -16,9 +16,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                env.TESTING321 = "Testing 1 2 3"
                 echo 'Building..'
-                echo 'Building ${env.TESTING321} '
+                echo 'Building ${env.YOUR_JENKINS_HOST} '
                 sh 'ls -al'
             }
         }
