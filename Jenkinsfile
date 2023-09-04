@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                TESTING321 = "Testing 1 2 3"
+                def TESTING321 = "Testing 1 2 3"
                 echo 'Building..'
                 echo 'Building ${TESTING321} '
                 sh 'ls -al'
