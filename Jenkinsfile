@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo 'Building $TESTING321 '
+                echo 'Building ${TESTING321} '
                 sh 'ls -al'
             }
         }
