@@ -5,7 +5,7 @@ pipeline {
         stage('Copy') {
             steps {
                 echo 'copying..'
-                // Get user and key from jenkins pram
+                // Get user and key from jenkins pram.
                 sshagent (credentials: ['test200']) {
                    sh 'ssh -o StrictHostKeyChecking=no -l root 192.168.1.223 ls -al'
                    sh 'ssh root@192.168.1.223 rm -rf /var/tmp/jenk_build'
