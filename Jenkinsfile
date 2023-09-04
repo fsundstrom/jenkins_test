@@ -1,5 +1,6 @@
 pipeline {
    agent any
+   env.MYTOOL_VERSION = '1.33'
 
     stages {
         stage('Copy') {
@@ -17,6 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo 'Building '$MYTOOL_VERSION
                 sh 'ls -al'
             }
         }
