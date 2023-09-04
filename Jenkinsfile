@@ -1,5 +1,8 @@
 pipeline {
    agent any
+   environment { 
+        TESTING321 = 'testing 123'
+    }
 
     stages {
         stage('Copy') {
@@ -17,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo 'Building params.${number} '
+                echo 'Building $TESTING321 '
                 sh 'ls -al'
             }
         }
