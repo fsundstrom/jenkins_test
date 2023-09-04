@@ -24,6 +24,8 @@ pipeline {
                 echo 'Building..'
                 // enverment var test
                 echo "Building ${env.MYTESTSTR} "
+                // enverment var from jenkins pram test
+                echo "Building ${env.TESTPRAM} "
                 sh 'ls -al'
             }
         }
