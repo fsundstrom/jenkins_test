@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo 'Building ${number} '
+                echo 'Building params.${number} '
                 sh 'ls -al'
             }
         }
