@@ -30,8 +30,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sshagent (credentials: ['test200']) {
                    sh 'ssh root@192.168.1.223 chmod 777 /var/tmp/jenk_build/test.sh'
                    sh 'ssh root@192.168.1.223 /var/tmp/jenk_build/test.sh'
+                }
                 }
         }
     }
