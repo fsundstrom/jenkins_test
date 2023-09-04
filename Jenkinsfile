@@ -15,10 +15,9 @@ pipeline {
             }
         }
         stage('Build') {
-            env.MYTOOL_VERSION = '1.33'
             steps {
                 echo 'Building..'
-                echo 'Building $MYTOOL_VERSION '
+                echo 'Building ${number} '
                 sh 'ls -al'
             }
         }
