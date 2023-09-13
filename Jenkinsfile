@@ -12,7 +12,7 @@ pipeline {
                 echo 'copying..'
                 // Get user and key from jenkins pram.
                 sshagent (credentials: ['test200']) {
-                   sh 'ssh -o StrictHostKeyChecking=no -l root 192.168.1.223 ls -al'
+                   sh 'ssh -o StrictHostKeyChecking=no -l root@buildservername ls -al'
                    sh 'ssh root@buildservername rm -rf /var/tmp/jenk_build'
                    sh 'ssh root@buildservername mkdir /var/tmp/jenk_build'
                    sh 'scp -r * root@buildservername:/var/tmp/jenk_build'
