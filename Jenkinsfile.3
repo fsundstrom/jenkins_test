@@ -13,9 +13,9 @@ pipeline {
                 // Get user and key from jenkins pram.
                 sshagent (credentials: ['test200']) {
                    sh 'ssh -o StrictHostKeyChecking=no -l root 192.168.1.223 ls -al'
-                   sh 'ssh root@buildservername rm -rf /var/tmp/jenk_build'
-                   sh 'ssh root@buildservername mkdir /var/tmp/jenk_build'
-                   sh 'scp -r * root@buildservername:/var/tmp/jenk_build'
+                   sh 'ssh root@192.168.1.223 rm -rf /var/tmp/jenk_build'
+                   sh 'ssh root@192.168.1.223 mkdir /var/tmp/jenk_build'
+                   sh 'scp -r * root@192.168.1.223:/var/tmp/jenk_build'
                  }
             }
         }
@@ -40,8 +40,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sshagent (credentials: ['test200']) {
-                   sh 'ssh root@buildservername chmod 777 /var/tmp/jenk_build/test.sh'
-                   sh 'ssh root@buildservername /var/tmp/jenk_build/test.sh'
+                   sh 'ssh root@192.168.1.223 chmod 777 /var/tmp/jenk_build/test.sh'
+                   sh 'ssh root@192.168.1.223 /var/tmp/jenk_build/test.sh'
                 }
                 }
         }
